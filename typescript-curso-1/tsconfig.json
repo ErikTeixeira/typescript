@@ -1,0 +1,16 @@
+// configurações do compilador
+
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "outDir": "dist/js",
+        "target": "ES6",
+        "noEmitOnError": true,
+        // não deixa o ts aceitar qualquer tipo - any
+        "noImplicitAny": true
+    },
+    "include": [
+        // todo arquivo .TS que tiver na sub pasta do app vai ser convertido e jogado para a dist em JS
+        "app/**/*"
+    ]
+}
