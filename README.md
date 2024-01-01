@@ -1,8 +1,8 @@
 # Typescript
 
-### Curso 1
+## Curso 1
 
-## Recursos Explorados
+### Recursos Explorados
 - **Compilador do TypeScript:**
   - Compreensão das funcionalidades e uso progressivo.
 - **Tipagem Estática:**
