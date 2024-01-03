@@ -4,7 +4,12 @@
         "outDir": "dist/js",
         "target": "ES6",
         "noEmitOnError": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        // remover comentarios dos arquivos js compilados
+        "removeComments": true,
+        // exige uma verificação estrita de tipos para valores nulos ou indefinidos
+        // obrigará o desenvolvedor a tratar todos os pontos de acesso a valores null e undefined
+        "strictNullChecks": true
     },
     "include": ["app/**/*"]
 }
