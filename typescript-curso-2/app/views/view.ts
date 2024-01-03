@@ -4,12 +4,28 @@ export abstract class View<T>{
     // GENERICS - <> - para funcionar independente do tipo do model - se é Negociacoes ou string
     // Depois vai em cada classe que está dando extends nessa e coloca o tipo que quer que ela seja 
 
-    // os filhos na heranã não conseguem acessar oum elemento private do pai
+    // os filhos na herança não conseguem acessar um elemento private do pai
     // se usa o protected, quem herdar está classe pode usar o elemento
     protected elemento: HTMLElement;
 
-    constructor(seletor: string) {
-        this.elemento = document.querySelector(seletor);
+    private escapar = false;
+
+    // parametro opcional -> escapar?
+    // parametros opcionais são sempre no final senão não funciona
+    constructor(seletor: string, escapar?: boolean) {
+        const elemento = document.querySelector(seletor);
+        // teste de null
+        if (elemento) {
+            this.elemento = elemento as HTMLElement;
+        } else {
+            // faz este else porque não da para colocar outro no lugar do que deu erro
+            throw Error(`Seletor - ${seletor} - não existe no DOM. Verifique`);
+        }
+        
+        if (escapar) {
+            // Se não fizer isso o escapar do parametro vsi ser undefined
+            this.escapar = escapar;
+        }
     }
 
     // Não precisa ter deste modo no abstract
@@ -18,12 +34,20 @@ export abstract class View<T>{
     //     throw Error ("Classe filha precisa implementar o método template");
     // }
 
-    abstract template(model: T): string;
+    protected abstract template(model: T): string;
+    // coloca protected para apenas ele proprio ter acesso e os filhos dele - ter que colocar protected nos filhos tmb
+
     // já da o erro na hora de compilar e não em run time - aparece que e obrigatorio tem um método template
 
     update(model: T): void {
-        const template = this.template(model);
-        this.elemento.innerText = template;
+        let template = this.template(model);
+
+        if (this.escapar) {
+            // expressão regular que vai remover tag script no template
+            template = template.replace(/<script>[/s/S]*?<\/script>/, "");
+        }
+
+        this.elemento.innerHTML = template;
     }
 
 }
