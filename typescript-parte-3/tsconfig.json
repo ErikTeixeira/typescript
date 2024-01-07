@@ -6,7 +6,10 @@
         "noImplicitAny": true,
         "removeComments": true,
         "strictNullChecks": true,
+        // não quer dizer que e experimental
         "experimentalDecorators": true
     },
     "include": ["app/src/**/*"]
 }
+// npm install typescript@4.2.2
+// npm install typescript@4.2.2 --save-dev
