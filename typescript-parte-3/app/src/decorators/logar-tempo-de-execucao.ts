@@ -1,7 +1,8 @@
 // Requisitos não funcionais - teste de performance
 
 // Decorator - função
-export function logarTempoDeExuecucao() {
+// valor padrão  - boolean = false
+export function logarTempoDeExuecucao(emSegundos: boolean = false) {
     return function(
         // se coloca no método estatico da classe ele é a função construtora da classe, se coloca em um não estatico ele retorna o prototyte da classe
         target: any,
@@ -17,6 +18,13 @@ export function logarTempoDeExuecucao() {
         // ...args: Array<any>  -  para os parametros que os métodos terão, que pode ser 0 ou mais, eles vão ser passados como array  - ou - ...args: Array[]
         descriptor.value = function(...args: Array<any>) {
 
+            let divisor = 1;
+            let unidade = "milisegundos";
+            if (emSegundos) {
+                divisor = 1000;
+                unidade = "segundos";
+            }
+
             const t1 = performance.now();
 
             // Chamar o método original
@@ -26,7 +34,7 @@ export function logarTempoDeExuecucao() {
 
             const t2 = performance.now();
             
-            console.log(`Tempo de execução do ${propertyKey}: ${(t2 - t1) / 1000} segundos`);
+            console.log(`Tempo de execução do ${propertyKey}: ${(t2 - t1) / divisor} ${unidade}`);
 
             retorno;
         }

@@ -13,8 +13,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.10.7",
     "concurrently": "^6.0.0",
     "lite-server": "^2.6.1",
     "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "undici-types": "^6.2.1"
   }
 }
