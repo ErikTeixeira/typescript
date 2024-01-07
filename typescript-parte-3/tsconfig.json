@@ -6,13 +6,7 @@
         "noImplicitAny": true,
         "removeComments": true,
         "strictNullChecks": true,
-        // poder usar decorators, não quer dizer que é experimental, e que a linguagem ainda não consolidou os decorators
-        "experimentalDecorators": true,
-        "moduleResolution": "node",
-        "baseUrl": "./",
-        "paths": {
-            "undici-types": ["node_modules/undici-types"]
-        }
+        "experimentalDecorators": true
     },
     "include": ["app/src/**/*"]
 }

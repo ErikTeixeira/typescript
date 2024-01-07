@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { domInjector } from '../decorators/dom-injector.js';
 import { inspect } from '../decorators/inspect.js';
-import { logarTempoDeExuecucao } from '../decorators/logar-tempo-de-execucao.js';
+import { logarTempoDeExecucao } from '../decorators/logar-tempo-de-execucao.js';
 import { DiasDaSemana } from '../enums/dias-da-semana.js';
 import { Negociacao } from '../models/negociacao.js';
 import { Negociacoes } from '../models/negociacoes.js';
@@ -46,15 +46,15 @@ export class NegociacaoController {
     }
 }
 __decorate([
-    domInjector("#data")
+    domInjector('#data')
 ], NegociacaoController.prototype, "inputData", void 0);
 __decorate([
-    domInjector("#quantidade")
+    domInjector('#quantidade')
 ], NegociacaoController.prototype, "inputQuantidade", void 0);
 __decorate([
-    domInjector("#valor")
+    domInjector('#valor')
 ], NegociacaoController.prototype, "inputValor", void 0);
 __decorate([
-    inspect(),
-    logarTempoDeExuecucao()
+    inspect,
+    logarTempoDeExecucao()
 ], NegociacaoController.prototype, "adiciona", null);
