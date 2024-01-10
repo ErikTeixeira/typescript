@@ -27,3 +27,9 @@
  - Criação de um sistema inspirado no JSX para atualização eficiente de interfaces.
 - **Configuração Avançada do Compilador TS:**
  - Aprofundamento na configuração do compilador TypeScript para maximizar a eficiência do código  - strictNullChecks -
+
+
+
+
+npm install typescript@4.2.2
+npm install typescript@4.2.2 --save-dev
