@@ -6,8 +6,17 @@
         "noImplicitAny": true,
         "removeComments": true,
         "strictNullChecks": true,
-        // poder usar decorators, não quer dizer que é experimental, e que a linguagem ainda não consolidou os decorators
-        "experimentalDecorators": true
+        // não quer dizer que e experimental
+        "experimentalDecorators": true,
+        // conseguir debugar no navegador, e no navegador no inspect dar ctrl P, e escolher o arquivo .ts
+        "sourceMap": true
     },
     "include": ["app/src/**/*"]
 }
+// npm install typescript@4.2.2
+// npm install typescript@4.2.2 --save-dev
+
+
+// servidor-api
+// npm start
+// vai ser porta 8080 - no navegador - localhost:8080/dados
